@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+    <!-- Head contains information about the page (for example the style) -->
+
+    <head>
+        <title>HTML CSS Course Intro</title>
+        <!-- Style allow to run css code inside an HTML file -->
+        <style>
+            .orange-button {
+                background-color: orange;
+                color: white;
+                border: none;
+                font-size: larger;
+            }
+
+            .yellow-button {
+                background-color: yellow;
+                color: black;
+                border: none;
+                font-size: larger;
+            }
+        </style>
+    </head>
+<!-- Body what is seen in the page -->
+
+    <body>
+        <!-- title add a tooltip to the button -->
+        <!-- class add a label to the element and we can access it using css code by using this syntax .(class name) -->
+        <!-- OnClick run the javascript code when the button is pressed -->
+        <p> Hello, world!
+            <p>
+                Today i went to the grocery store to buy some eggs and vegetables.
+            </p>
+            <button class="yellow-button" onclick="
+                alert('Item added')
+            ">
+                Add to cart
+            </button>
+            <button class="orange-button" onclick="
+                alert('Loading')
+                alert('Purchased')
+            ">
+                Buy now
+            </button>
+        </p>
+
+        <!-- This runs a javascript code, at the bottom because we want that the html is compiled first then we run javascript code -->
+        <script>
+            //js code comment.
+            /*
+                Multi line comment
+            */
+            alert('Welcome to the page, is now loaded')
+        </script>
+    </body>
+
+</html>

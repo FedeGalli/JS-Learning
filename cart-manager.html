@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<script>
+    function showCartQuantity(){
+        document.getElementById('n-items').innerHTML = 'Number of items: ' + cartQuantity
+    }
+
+    let cartQuantity = 0
+    showCartQuantity()
+
+</script>
+
+
+<html>
+
+    <head>
+        <title>Cart Manager</title>
+
+        <style>
+
+        </style>
+    </head>
+    <body onload="
+        showCartQuantity()
+    ">
+
+        <p>
+            Manage cart quantity
+            <p>
+                <button onclick="
+                        cartQuantity += 1
+                        showCartQuantity()
+                    ">
+                    +1 Item
+                </button>
+                <button onclick="
+                        cartQuantity += 2
+                        showCartQuantity()
+                    ">
+                    +2 Item
+                </button>
+                <button onclick="
+                        cartQuantity += 3
+                        showCartQuantity()
+                    ">
+                    +3 Item
+                </button>
+                <button onclick="
+                        cartQuantity = 0
+                        showCartQuantity()
+                    ">
+                    Reset cart
+                </button>
+            </p>
+
+            <p id="n-items">
+                Number of items: 
+            </p>
+
+
+        </p>
+
+    </body>
+
+</html>

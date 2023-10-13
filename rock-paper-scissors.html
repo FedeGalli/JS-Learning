@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<script>
+    
+    const score = {
+        human: 0,
+        bot: 0,
+        draw: 0,
+        fun: function a(){
+            return 'a'
+        }
+    }
+
+    function reset(){
+        score.bot = 0
+        score.human = 0
+        score.draw = 0
+
+        document.getElementById('score-view').innerHTML = ''
+        document.getElementById('choice-view').innerHTML = ''
+
+    }
+
+    function assignSeed(number){
+        if (number <= 1)
+            return 'Rock'
+        else if (number > 1 && number <= 2)
+            return 'Paper'
+        else
+            return 'Scissiors'
+    }
+
+    function play(userChoice){
+        let botChoice = assignSeed(Math.random() * 3)
+        
+
+        if (userChoice === botChoice){
+            score.draw++
+            
+        }
+        else if (userChoice === 'Rock'){
+            if (botChoice === 'Paper'){
+                score.bot++
+            }
+
+            else{
+                score.human++
+            }
+                
+        } else if (userChoice === 'Paper'){
+            if (botChoice === 'Rock'){
+                score.human++
+            }
+
+            else{
+                score.bot++
+            }
+        } else{
+            if (botChoice === 'Rock'){
+                score.bot++
+            }
+            else{
+                score.human++
+            }
+        }
+        
+        document.getElementById('choice-view').innerHTML = 'Human: ' + userChoice + '<p> Bot: ' + botChoice + ' </p>'
+        document.getElementById('score-view').innerHTML = 'Current score:<p> Human: ' + score.human + ' , Bot: ' + score.bot + ' , Draw: ' + score.draw + '</p>'
+    }
+</script>
+
+
+<html>
+
+    <head>
+        <title>Play, It's fun</title>
+
+        <style>
+            
+            body{
+                font-family: Arial, Helvetica, sans-serif; 
+                background-color: black;
+                color: white;
+            }
+
+            .title{
+                font-size: 40px;
+                margin-top: 10px;
+            }
+
+            button{
+                border: none;
+                color: black;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                padding-left: 15px;
+                padding-right: 15px;
+                font-weight: bold;
+                border-radius: 50px;
+                cursor: pointer;
+                margin-top: 30px;
+                margin-right: 10px;
+            }
+
+            .rock-class{
+                background-color: rgb(191, 191, 191);
+            }
+            
+            .paper-class{
+                background-color: rgb(179, 255, 0);
+            }
+
+            .scissiors-class{
+                background-color:rgb(255, 221, 0)
+            }
+
+            .reset-class{
+                background-color: rgba(255, 0, 0, 0.826);
+            }
+        </style>
+    </head>
+    <body>
+        <p class="title">
+            Rock, Paper, Scissiors Game
+        </p>
+
+        <p>
+            <button class="rock-class" onclick="
+                play('Rock')
+            ">
+                Rock
+            </button>
+            <button class="paper-class" onclick="
+                play('Paper')
+            ">
+                Paper
+            </button>
+            <button class="scissiors-class" onclick="
+                play('Scissiors')
+            ">
+                Scissiors
+            </button>
+            <button class="reset-class" onclick="
+                reset()
+            ">
+                Reset Game
+            </button>
+
+        </p>
+
+        <p> 
+            Select one seed to play against the PC           
+        </p>
+
+        <p id="choice-view">
+        </p>
+
+        <p id="score-view">
+        </p>
+
+    </body>
+
+</html>
