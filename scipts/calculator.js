@@ -43,8 +43,5 @@ function composer(char){
             operation.rn = ''
         }
     }
-    console.log(operation.ln)
-    console.log(operation.o)
-    console.log(operation.rn)
     
 }
