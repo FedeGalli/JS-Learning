@@ -1,0 +1,50 @@
+body{
+    font-family: Arial, Helvetica, sans-serif; 
+    background-color: rgba(0, 0, 0, 0.878);
+    color: white;
+}
+
+.title{
+    font-size: 40px;
+    margin-top: 10px;
+}
+
+button{
+    color: white;
+    background-color: transparent;
+    padding: 70px;
+    font-size: 60px;
+    border-radius: 120px;
+    border-width: 10px;
+    border-color: white;
+    cursor: pointer;
+    margin-top: 30px;
+    margin-right: 10px;
+    margin-bottom: 40px;
+}
+
+.reset-class{
+    color: white;
+    background-color: transparent;
+    padding: 30px;
+    font-size: 30px;
+    border-radius: 120px;
+    border-width: 10px;
+    border-color: white;
+    cursor: pointer;
+    margin-top: 50px;
+    margin-right: 10px;
+    margin-bottom: 40px;
+}
+
+.winner-text{
+    font-size: 70px;
+}
+
+.choice-view{
+    font-size: 50px;
+}
+
+.score-view{
+    font-size: 30px;
+}
