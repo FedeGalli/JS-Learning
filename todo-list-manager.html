@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<script src="scipts/todo-list-manager.js">
+</script>
+
+<html>
+
+    <head>
+        <title>Play, It's fun</title>
+    </head>
+    <body>
+
+        <p>
+            Todo List Manager
+        </p>
+
+        <p>
+            <input placeholder="Todo name" id="taskName">
+            <input type="date" id="dueDate">
+            <button onclick="addTask(document.getElementById('taskName').value, document.getElementById('dueDate').value)">
+                Add
+            </button>
+        </p>
+
+        <p id="taskList">
+
+        </p>
+
+    </body>
+
+</html>

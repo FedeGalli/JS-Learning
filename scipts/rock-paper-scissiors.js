@@ -1,4 +1,6 @@
 
+let intervalId = ''
+
 const score = {
 human: 0,
 bot: 0,
@@ -30,6 +32,12 @@ score.draw = 0
 document.getElementById('winner-view').innerHTML = ''
 document.getElementById('score-view').innerHTML = ''
 document.getElementById('choice-view').innerHTML = ''
+
+if (intervalId !== ''){
+    clearInterval(intervalId)
+    intervalId = ''
+}
+
 
 }
 
@@ -82,8 +90,16 @@ else if (userChoice === 'Rock'){
         winner = 'Human wins'
     }
 }
-
 document.getElementById('winner-view').innerHTML = winner
 document.getElementById('choice-view').innerHTML = 'Human ' + translation.toEmoji(userChoice) + ' ' + translation.toEmoji(botChoice) + ' Bot</p>'
 document.getElementById('score-view').innerHTML = 'Current score:<p> Human: ' + score.human + ' , Bot: ' + score.bot + ' , Draw: ' + score.draw + '</p>'
+}
+
+function playAutomation(){
+    play(assignSeed(Math.random() * 3))
+}
+
+function autoPlay(){
+    intervalId = setInterval(playAutomation, 200)
+    console.log(intervalId)
 }
