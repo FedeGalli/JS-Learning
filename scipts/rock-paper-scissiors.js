@@ -103,3 +103,8 @@ function autoPlay(){
     intervalId = setInterval(playAutomation, 200)
     console.log(intervalId)
 }
+
+
+const autoPlayListener = document.querySelector('.auto-play-class')
+
+autoPlayListener.addEventListener('click', autoPlay)
